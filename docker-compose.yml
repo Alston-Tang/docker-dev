@@ -9,6 +9,9 @@ services:
     container_name: dev
     ports:
       - ${SSH_PORT:-22}:22
+    volumes:
+      - dev:/data
+    restart: unless-stopped
 volumes:
   dev:
     external: true
