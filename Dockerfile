@@ -1,15 +1,15 @@
 FROM ubuntu:22.04
 
+ENV SSH_USERS=tang
+ENV SSH_PASSWORD=a1a2a3a4
+
 RUN apt update
 RUN apt install -y openssh-server dumb-init sudo
 
-ARG SSH_USER dev
-ARG SSH_PASSWORD
-
-RUN useradd -r -m -s /bin/bash -g root -G sudo "${SSH_USER}"
-RUN echo "${SSH_USER}:${SSH_PASSWORD}" | chpasswd
-
 RUN service ssh start
 
-CMD ["dumb-init", "/usr/sbin/sshd","-D"]
+COPY ./entrypoint.sh /root/entrypoint.sh
+RUN chmod 755 /root/entrypoint.sh
+
+ENTRYPOINT ["dumb-init", "/root/entrypoint.sh"]
 
