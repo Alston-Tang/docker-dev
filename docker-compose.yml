@@ -1,0 +1,14 @@
+version: "3"
+services:
+  dev:
+    build:
+      context: ./
+      args:
+        SSH_USER: ${SSH_USER}
+        SSH_PASSWORD: ${SSH_PASSWORD}
+    container_name: dev
+    ports:
+      - ${SSH_PORT:-22}:22
+volumes:
+  dev:
+    external: true
