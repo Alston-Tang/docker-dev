@@ -11,6 +11,7 @@ services:
       - ${SSH_PORT:-22}:22
     volumes:
       - dev:/data
+      - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
 volumes:
   dev:
