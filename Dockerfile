@@ -4,7 +4,7 @@ ENV SSH_USERS=tang
 ENV SSH_PASSWORD=a1a2a3a4
 
 RUN apt update
-RUN apt install -y openssh-server dumb-init sudo
+RUN apt install -y openssh-server dumb-init sudo vim build-essential git
 
 RUN service ssh start
 
