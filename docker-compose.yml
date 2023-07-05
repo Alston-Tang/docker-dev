@@ -7,7 +7,6 @@ services:
     environment:
       - SSH_USER=${SSH_USER}
       - SSH_PASSWORD=${SSH_PASSWORD}
-    command: ["-E", "/dev/stdout"]
     container_name: dev
     ports:
       - ${SSH_PORT:-22}:22
