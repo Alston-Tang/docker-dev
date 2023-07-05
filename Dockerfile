@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-ENV SSH_USERS=tang
+ENV SSH_USER=tang
 ENV SSH_PASSWORD=a1a2a3a4
 
 RUN apt update
