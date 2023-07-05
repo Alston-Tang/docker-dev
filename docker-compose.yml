@@ -3,6 +3,7 @@ services:
   dev:
     build:
       context: ./
+    pull_policy: build
     environment:
       - SSH_USER=${SSH_USER}
       - SSH_PASSWORD=${SSH_PASSWORD}
