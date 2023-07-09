@@ -7,7 +7,7 @@ echo "${SSH_USER}:${SSH_PASSWORD}" | chpasswd
 
 mkdir -p /home/${SSH_USER}/.ssh
 cp /mnt/git-key/* /home/${SSH_USER}/.ssh
-chown ${SSH_USER}:root /home/${SSH_USER}/.ssh/*
+chown -R ${SSH_USER}:root /home/${SSH_USER}/.ssh
 
 if [ -n "${GIT_EMAIL}" ]; then
   sudo -u ${SSH_USER} git config --global user.email "${GIT_EMAIL}"
