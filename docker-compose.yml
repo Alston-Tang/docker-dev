@@ -18,6 +18,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /proc:/proc
       - /sys:/sys
+      - /dev:/dev
     restart: unless-stopped
 volumes:
   dev:
