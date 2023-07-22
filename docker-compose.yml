@@ -16,6 +16,8 @@ services:
       - dev:/data
       - git-key:/mnt/git-key
       - /var/run/docker.sock:/var/run/docker.sock
+      - /proc:/proc
+      - /sys:/sys
     restart: unless-stopped
 volumes:
   dev:
