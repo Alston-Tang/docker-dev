@@ -16,4 +16,6 @@ if [ -n "${GIT_NAME}" ]; then
   sudo -u ${SSH_USER} git config --global user.name "${GIT_NAME}"
 fi
 
+runuser -l ${SSH_USER} -c "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
+
 /usr/sbin/sshd -D "${@}"

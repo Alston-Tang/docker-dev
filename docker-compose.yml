@@ -16,6 +16,7 @@ services:
       - dev:/data
       - git-key:/mnt/git-key
       - /var/run/docker.sock:/var/run/docker.sock
+      - /mnt/storage/records:/mnt/storage/records
     privileged: true
     restart: unless-stopped
 volumes:
