@@ -17,6 +17,7 @@ services:
       - git-key:/mnt/git-key
       - /var/run/docker.sock:/var/run/docker.sock
       - /mnt/storage/records:/mnt/storage/records
+      - /mnt/main/airflow:/mnt/main/airflow
     privileged: true
     restart: unless-stopped
 volumes:
